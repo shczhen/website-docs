@@ -14,8 +14,11 @@
     "last 2 ios_saf major versions"
   ],
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "@mui/material": "^5.8.0",
     "@seagreenio/react-bulma": "^0.1.0-beta.4",
     "algoliasearch": "^4.11.0",
     "axios": "^0.24.0",
@@ -82,6 +85,7 @@
     "download:tidb:en:all": "./scripts/download-tidb-en.sh",
     "download:tidb:zh": "pingcap-docs-download dl pingcap/docs-cn",
     "download:tidb:zh:all": "./scripts/download-tidb-zh.sh",
+    "download:demo-list": "pingcap-docs-download dl shczhen/docs-cn --ref demo-list",
     "download:dm": "pingcap-docs-download dl pingcap/docs-dm",
     "download:dm:all": "./scripts/download-dm.sh",
     "download:dm:en:all": "./scripts/download-dm-en.sh",

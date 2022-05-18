@@ -1,0 +1,16 @@
+@import '../../styles/common';
+
+.DemoContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.cardContainer {
+  width: 360px;
+  // height: 200px;
+
+  .cardTitle {
+    margin-bottom: 0;
+  }
+}

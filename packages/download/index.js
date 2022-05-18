@@ -59,6 +59,7 @@ export function download(argv) {
   switch (repo) {
     case 'pingcap/docs':
     case 'pingcap/docs-cn':
+    case 'shczhen/docs-cn':
       retrieveAllMDsFromZip(
         {
           repo,
