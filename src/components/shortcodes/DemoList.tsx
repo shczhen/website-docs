@@ -29,9 +29,7 @@ export const DemoItem = (props: any) => {
       <div className={clsx('card', styles.cardContainer)}>
         <header className="card-header">
           {/* <p className="card-header-title">{title}</p> */}
-          <p className={clsx('title', 'card-header-title', styles.cardTitle)}>
-            {title}
-          </p>
+          <p className={clsx('card-header-title', styles.cardTitle)}>{title}</p>
           {/* <button className="card-header-icon" aria-label="more options">
             <span className="icon">
               <i className="fas fa-angle-down" aria-hidden="true"></i>
@@ -86,7 +84,7 @@ export const DemoItemMui = (props: any) => {
         subheader={`@${uid}`}
       />
       <CardContent>
-        <Typography variant="h4" component="div">
+        <Typography variant="h5" component="div">
           {title}
         </Typography>
         <br />
@@ -97,7 +95,7 @@ export const DemoItemMui = (props: any) => {
       <CardActions>
         {repo && (
           <Button size="small" href={repo} target="_blank">
-            Source Code
+            View Source
           </Button>
         )}
         {playground && (
