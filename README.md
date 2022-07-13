@@ -7,7 +7,7 @@
 
 [![Incremental Build Triggered By Push Events](https://github.com/PingCAP/website-docs/actions/workflows/update.yml/badge.svg?event=repository_dispatch)](https://github.com/PingCAP/website-docs/actions/workflows/update.yml)
 
-## How to develop test
+## How to develop test 2
 
 After clone this repo, run `yarn` to get all deps:
 
