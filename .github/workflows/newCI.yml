@@ -24,6 +24,7 @@ jobs:
           node-version: 16
           cache: "yarn"
       - run: yarn
+      - run: git submodule update --remote
 
       - name: Check file exists
         id: check-file-exists
