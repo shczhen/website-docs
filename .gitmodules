@@ -1,0 +1,3 @@
+[submodule "doc-content"]
+	path = doc-content
+	url = https://github.com/shczhen/doc-content.git
