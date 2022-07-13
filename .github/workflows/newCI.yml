@@ -1,0 +1,49 @@
+name: new ci
+
+on:
+  push:
+    branches:
+      - test-submodule
+  workflow_dispatch:
+
+concurrency:
+  group: update
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Retrieve docs and deploy the website
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: 'test-submodule'
+          submodules: true
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: "yarn"
+      - run: yarn
+
+      - name: Check file exists
+        id: check-file-exists
+        run: |
+          sudo apt install tree
+          tree -L 3 -d ./doc-content/markdown-pages
+
+      - name: Restore gatsby cache
+        uses: actions/cache@v3
+        id: gatsby-cache
+        with:
+          path: |
+            .cache
+            public
+          key: ${{ runner.os }}-gatsby-cache-4-${{ github.event.client_payload.sha }} # You can inc the version number to force cache rebuild
+          restore-keys: |
+            ${{ runner.os }}-gatsby-cache-4-
+
+      - name: Build website
+        env:
+          CI: true
+        run: |
+          yarn build --verbose
